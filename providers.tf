@@ -19,6 +19,13 @@ terraform {
       version = "0.9.1"
     }
   }
+
+  cloud {
+    organization = "learn_tf_az_9f5456"
+    workspaces {
+      name = "learn-terraform-aks"
+    }
+  }
 }
 
 provider "azurerm" {
