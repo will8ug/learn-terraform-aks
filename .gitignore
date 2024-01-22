@@ -37,3 +37,6 @@ terraform.rc
 .idea/
 *.iml
 .vscode/
+
+# just a temporary test file on local:
+/azurek8s

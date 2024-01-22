@@ -20,6 +20,16 @@ echo "$(terraform output kube_config)" > ./azurek8s
 export KUBECONFIG=./azurek8s
 kubectl get nodes
 
+kubectl apply -f apps/aks-store-quickstart.yml
+
+kubectl get pods
+kubectl get svc store-front -w
+# Open browser to view the website
+
+terraform plan -destroy -out main.destroy.tfplan
+terraform apply main.destroy.tfplan
+
+
 ### helper commands ###
 az account list-locations -o table
 
